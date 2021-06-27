@@ -8,22 +8,22 @@ class Parent extends Component {
     super()
     this.state = {
       color: getRandomColor(),
-      childrenColor: '#FFF'
+      childrenColor: "#FFF"
     }
   }
 
   changeColor = (newChildColor) => {
-    this.setState( {
+    this.setState({
       color: getRandomColor(),
       childrenColor: newChildColor
     })
-  } 
+  }
 
   render() {
     return (
-      <div className="parent" style={{backgroundColor: this.state.color}} >
-        <Child handleColorChange={this.changeColor} handleColorChange={this.changeColor} />
-        <Child handleColorChange={this.changeColor} handleColorChange={this.changeColor} />
+      <div className="parent" style={{backgroundColor: this.state.color}}>
+        <Child color={this.state.childrenColor} handleColorChange={this.changeColor}/>
+        <Child color={this.state.childrenColor} handleColorChange={this.changeColor}/>
       </div>
     )
   }
